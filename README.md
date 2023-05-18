@@ -12,3 +12,8 @@ If you use Launchpad, this is the replacement you need.
 - [x] Popup from the dock
 - [x] Menu Bar app
 - [ ] Smart search(color and icon using on-device ML)
+
+## How does it work?
+Atlas uses Apple Script to figure out where the app is located in the dock. 
+*This is why the app requires accessiblity features.*
+Then the app finds apps in your Applications folder everytime on launch.

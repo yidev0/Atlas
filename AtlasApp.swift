@@ -11,7 +11,7 @@ import SwiftUI
 struct AtlasApp: App {
     
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-//    let persistenceController = PersistenceController.shared
+    @Environment(\.scenePhase) private var scenePhase
     
     @State var showMenubar = true
     

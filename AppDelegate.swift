@@ -34,7 +34,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate {
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        showWindow()
+        if popoverWindowController.window?.isVisible == true {
+            withAnimation {
+                popoverWindowController.close()
+            }
+        } else {
+            showWindow()
+        }
         return true
     }
     

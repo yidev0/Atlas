@@ -15,7 +15,7 @@ class ATAppManager: ObservableObject {
     @Published var categories:Set<ATAppCategoryType> = []
     
     @Published var position: CGPoint = .zero
-    @Published var windowSize: CGSize = .init(width: 240, height: 320)
+    @Published var windowSize: CGSize = .init(width: 300, height: 400)
     
     @Published var columnCount = 0
     

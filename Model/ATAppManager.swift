@@ -29,26 +29,6 @@ class ATAppManager: ObservableObject {
             self.getAllApplications()
         }
     }
-    
-//    private func initScript() {
-//        DispatchQueue.global(qos: .background).async {
-//            do {
-//                let destinationURL = try FileManager().url(
-//                    for: FileManager.SearchPathDirectory.applicationScriptsDirectory,
-//                    in: FileManager.SearchPathDomainMask.userDomainMask,
-//                    appropriateFor: nil,
-//                    create: true
-//                )
-//
-//                let scriptfileURL = destinationURL.appendingPathComponent("DockItemPosition.scpt")
-//                self.scriptURL = scriptfileURL
-//            } catch {
-//                self.scriptURL = nil
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
     private func updateDockPosition(to point: CGPoint) {
         DispatchQueue.main.async {
             self.position = point
@@ -131,13 +111,21 @@ class ATAppManager: ObservableObject {
             appIdentifier = identifier
         }
         
+        var appSource: ATAppSource? = nil
+        let appStoreReceiptURL = url.appendingPathComponent("Contents/_MASReceipt/receipt")
+        let fileManager = FileManager()
+        if fileManager.fileExists(atPath: appStoreReceiptURL.path) {
+            appSource = .AppStore
+        }
+        
         if let name = appName, let identifier = appIdentifier {
             var app: ATApp?; var category: ATAppCategoryType?
             app = ATApp(
                 name: name,
                 identifier: identifier,
                 category: ATAppCategoryType(rawValue: appCategory ?? ""),
-                icon: appIcon
+                icon: appIcon,
+                source: appSource
             )
             
             if let appCategory = appCategory {
@@ -151,20 +139,19 @@ class ATAppManager: ObservableObject {
     }
     
     private func getAllApplications() {
-        let workspace = NSWorkspace.shared
         let fileManager = FileManager.default
-        let applicationsURL = URL(fileURLWithPath: "/Applications")
-        let appURLs = try? fileManager.contentsOfDirectory(at: applicationsURL, includingPropertiesForKeys: nil)
-//        var appInfo: Set<ATApp> = []
+        let applicationsURLs = [URL(fileURLWithPath: "/Applications"), URL(fileURLWithPath: "/System/Applications")]
         
-        if let appURLs = getApplicationURLs(in: applicationsURL, fileManager: fileManager) {
-            for appURL in appURLs {
-                let (app, category) = getAppFrom(appURL)
-                if let app = app {
-                    self.apps.insert(app)
-                }
-                if let category = category {
-                    self.categories.insert(category)
+        for applicationsURL in applicationsURLs {
+            if let appURLs = getApplicationURLs(in: applicationsURL, fileManager: fileManager) {
+                for appURL in appURLs {
+                    let (app, category) = getAppFrom(appURL)
+                    if let app = app {
+                        self.apps.insert(app)
+                    }
+                    if let category = category {
+                        self.categories.insert(category)
+                    }
                 }
             }
         }
@@ -186,13 +173,6 @@ class ATAppManager: ObservableObject {
                 }
             }
         }
-        
-//        if directoryURL.lastPathComponent == "Xcode.app" {
-//            let xcodeDeveloperURL = directoryURL.appendingPathComponent("Contents/Developer/Applications")
-//            if let xcodeDeveloperAppURLs = getApplicationURLs(in: xcodeDeveloperURL, fileManager: fileManager) {
-//                appURLs.append(contentsOf: xcodeDeveloperAppURLs)
-//            }
-//        }
         
         return appURLs
     }

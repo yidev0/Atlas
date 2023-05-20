@@ -18,19 +18,22 @@ class ATApp: Hashable {
     var category: ATAppCategoryType?
     var icon: NSImage?
     var color: NSColor?
+    var source: ATAppSource?
     
     init(
         name: String,
         identifier: String,
         category: ATAppCategoryType?,
         icon: NSImage? = nil,
-        color: NSColor? = nil
+        color: NSColor? = nil,
+        source: ATAppSource?
     ) {
         self.name = name
         self.identifier = identifier
         self.category = category
         self.icon = icon
         self.color = color
+        self.source = source
     }
     
     func hash(into hasher: inout Hasher) {

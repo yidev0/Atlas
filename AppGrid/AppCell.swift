@@ -47,7 +47,8 @@ struct AppCell_Previews: PreviewProvider {
                 ATApp(
                     name: "Title",
                     identifier: "com.sample.app",
-                    category: .education
+                    category: .education,
+                    source: nil
                 ),
             isFocused: true
         )

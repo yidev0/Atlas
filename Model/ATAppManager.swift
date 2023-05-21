@@ -120,17 +120,20 @@ class ATAppManager: ObservableObject {
         
         if let name = appName, let identifier = appIdentifier {
             var app: ATApp?; var category: ATAppCategoryType?
+            
+            if isBrowserApp(bundleIdentifier: identifier) == true {
+                category = ATAppCategoryType.browser
+            } else if let appCategory = appCategory {
+                category = ATAppCategoryType(rawValue: appCategory)
+            }
+            
             app = ATApp(
                 name: name,
                 identifier: identifier,
-                category: ATAppCategoryType(rawValue: appCategory ?? ""),
+                category: category,
                 icon: appIcon,
                 source: appSource
             )
-            
-            if let appCategory = appCategory {
-                category = ATAppCategoryType(rawValue: appCategory)
-            }
             
             return (app, category)
         } else {
@@ -140,7 +143,7 @@ class ATAppManager: ObservableObject {
     
     private func getAllApplications() {
         let fileManager = FileManager.default
-        let applicationsURLs = [URL(fileURLWithPath: "/Applications"), URL(fileURLWithPath: "/System/Applications")]
+        let applicationsURLs = [URL(fileURLWithPath: "/Applications"), URL(fileURLWithPath: "/System/Applications"), URL(fileURLWithPath:"/System/Library/CoreServices/Applications")]
         
         for applicationsURL in applicationsURLs {
             if let appURLs = getApplicationURLs(in: applicationsURL, fileManager: fileManager) {
@@ -177,11 +180,42 @@ class ATAppManager: ObservableObject {
         return appURLs
     }
     
+    func isBrowserApp(bundleIdentifier: String) -> Bool {
+        guard let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundleIdentifier) else {
+            return false
+        }
+        
+        guard let appBundle = Bundle(url: appURL),
+              let infoPlist = appBundle.infoDictionary,
+              let urlTypes = infoPlist["CFBundleURLTypes"] as? [[String: Any]] else {
+            return false
+        }
+        
+        let webURLSchemes = ["http", "https"]
+        
+        for urlType in urlTypes {
+            guard let schemes = urlType["CFBundleURLSchemes"] as? [String] else {
+                continue
+            }
+            
+            for scheme in schemes {
+                if webURLSchemes.contains(scheme.lowercased()) {
+                    return true
+                }
+            }
+        }
+        
+        return false
+    }
+    
     public func searchApp(with search: String) -> [ATApp] {
         if search == "" {
             return self.apps.sorted(by: { $0.name < $1.name })
         } else {
-            return self.apps.filter({ $0.name.lowercased().contains(search) }).sorted(by: { $0.name < $1.name })
+            return self.apps.filter { app in
+                app.name.lowercased().replacingOccurrences(of: " ", with: "").contains(search.lowercased()) == true ||
+                app.category?.name.lowercased().contains(search.lowercased()) == true
+            }
         }
     }
     

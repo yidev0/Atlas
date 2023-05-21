@@ -10,6 +10,7 @@ import SwiftUI
 
 enum ATAppCategoryType: String {
     
+    case browser = "browser"
     case business = "public.app-category.business"
     case developerTools = "public.app-category.developer-tools"
     case education = "public.app-category.education"
@@ -60,6 +61,58 @@ enum ATAppCategoryType: String {
 }
 
 extension ATAppCategoryType {
+    var name: String {
+        switch self {
+        case .business:
+            return "business"
+        case .developerTools:
+            return "developer tools"
+        case .education:
+            return "education"
+        case .entertainment:
+            return "entertainment"
+        case .finance:
+            return "building.columns.fill"
+        case .games, .actionGames, .adventureGames, .arcadeGames, .boardGames, .cardGames, .casinoGames, .diceGames, .educationalGames, .familyGames, .kidsGames, .musicGames, .puzzleGames, .racingGames, .rolePlayingGames, .simulationGames, .sportsGames, .strategyGames, .triviaGames, .wordGames:
+            return "games"
+        case .graphicsDesign:
+            return "graphics design"
+        case .healthcareFitness:
+            return "healthcare fitness"
+        case .lifestyle:
+            return "lifestyle"
+        case .medical:
+            return "medical"
+        case .music:
+            return "music"
+        case .news:
+            return "news"
+        case .photography:
+            return "photography"
+        case .productivity:
+            return "productivity"
+        case .reference:
+            return "reference"
+        case .socialNetworking:
+            return "social Networking"
+        case .sports:
+            return "sports"
+        case .travel:
+            return "travel"
+        case .utilities:
+            return "utilities"
+        case .video:
+            return "video"
+        case .weather:
+            return "weather"
+        case .browser:
+            return "browser"
+        }
+    }
+
+}
+
+extension ATAppCategoryType {
     
     var symbol: String {
         switch self {
@@ -105,6 +158,8 @@ extension ATAppCategoryType {
             return "play.rectangle.fill"
         case .weather:
             return "cloud.sun.fill"
+        case .browser:
+            return "safari.fill"
         }
     }
     
@@ -151,6 +206,8 @@ extension ATAppCategoryType {
         case .video:
             return .red
         case .weather:
+            return .blue
+        case .browser:
             return .blue
         }
     }

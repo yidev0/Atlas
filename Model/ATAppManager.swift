@@ -143,12 +143,18 @@ class ATAppManager: ObservableObject {
     
     private func getAllApplications() {
         let fileManager = FileManager.default
-        let applicationsURLs = [URL(fileURLWithPath: "/Applications"), URL(fileURLWithPath: "/System/Applications"), URL(fileURLWithPath:"/System/Library/CoreServices/Applications")]
+        let applicationsURLs = [
+            URL(fileURLWithPath: "/Applications"),
+            URL(fileURLWithPath: "/System/Applications"),
+            URL(fileURLWithPath: "/Users/$USER/Applications"),
+            URL(fileURLWithPath: "/System/Library/CoreServices/Applications"),
+            URL(fileURLWithPath: "/Applications/Xcode.app/Contents/Developer/Applications/"),
+        ]
         
         for applicationsURL in applicationsURLs {
             if let appURLs = getApplicationURLs(in: applicationsURL, fileManager: fileManager) {
                 for appURL in appURLs {
-                    let (app, category) = getAppFrom(appURL)
+                    let (app, category) = getAppFrom(fileManager.resolveAlias(appURL) ?? appURL)
                     if let app = app {
                         self.apps.insert(app)
                     }
@@ -161,7 +167,7 @@ class ATAppManager: ObservableObject {
     }
 
     private func getApplicationURLs(in directoryURL: URL, fileManager: FileManager) -> [URL]? {
-        guard let directoryContents = try? fileManager.contentsOfDirectory(at: directoryURL, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles]) else {
+        guard let directoryContents = try? fileManager.contentsOfDirectory(at: directoryURL, includingPropertiesForKeys: nil, options: []) else {
             return nil
         }
         
@@ -170,13 +176,26 @@ class ATAppManager: ObservableObject {
         for url in directoryContents {
             if url.pathExtension == "app" {
                 appURLs.append(url)
+                
+                if fileManager.fileExists(
+                    atPath: url
+                        .appendingPathComponent("Contents")
+                        .appendingPathComponent("Applications").path
+                ) {
+                    if let nestedAppURLs = getApplicationURLs(
+                        in: url
+                            .appendingPathComponent("Contents")
+                            .appendingPathComponent("Applications"),
+                        fileManager: fileManager) {
+                        appURLs.append(contentsOf: nestedAppURLs)
+                    }
+                }
             } else if url.hasDirectoryPath {
                 if let nestedAppURLs = getApplicationURLs(in: url, fileManager: fileManager) {
                     appURLs.append(contentsOf: nestedAppURLs)
                 }
             }
         }
-        
         return appURLs
     }
     

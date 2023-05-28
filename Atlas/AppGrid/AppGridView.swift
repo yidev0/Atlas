@@ -10,7 +10,6 @@ import SwiftUI
 struct AppGridView: View {
     
     @EnvironmentObject var appManager: ATAppManager
-    @Binding var focusedApp: Int
     
     @Binding var apps: [ATApp]
     @Binding var search: String
@@ -20,7 +19,7 @@ struct AppGridView: View {
     var appSize: CGFloat
     var appSizeDiff: CGFloat
     
-    init(apps: Binding<[ATApp]>, focusedApp: Binding<Int>, search: Binding<String>) {
+    init(apps: Binding<[ATApp]>, search: Binding<String>) {
         let spacing: CGFloat = 12
         let appSize: CGFloat = 50
         let diff: CGFloat = 5
@@ -40,22 +39,31 @@ struct AppGridView: View {
         self.appSizeDiff = diff
         
         self._apps = apps
-        self._focusedApp = focusedApp
         self._search = search
     }
     
     var body: some View {
         GeometryReader { geometry in
-            ScrollView {
-                grid
-                    .padding(.all, 8)
-                    .onAppear {
-                        appManager.columnCount = calculateColumnCount(width: geometry.size.width, cellWidth: appSize)
+            ScrollViewReader { proxy in
+                ScrollView {
+                    grid
+                        .padding(.all, 8)
+                        .onAppear {
+                            appManager.columnCount = calculateColumnCount(width: geometry.size.width, cellWidth: appSize)
+                            appManager.columnCount = calculateRowCount(height: geometry.size.height, cellHeight: appSize)
+                        }
+                        .onChange(of: geometry.size.width) { newValue in
+                            appManager.columnCount = calculateColumnCount(width: newValue, cellWidth: appSize)
+                        }
+                        .onChange(of: geometry.size.height) { newValue in
+                            appManager.rowCount = calculateRowCount(height: newValue, cellHeight: appSize)
+                        }
+                }
+                .onChange(of: appManager.focusedApp) { newValue in
+                    if apps.count > appManager.focusedApp {
+                        proxy.scrollTo(apps[appManager.focusedApp].identifier)
                     }
-                    .onChange(of: geometry.size.width) { newValue in
-                        print("window", newValue)
-                        appManager.columnCount = calculateColumnCount(width: newValue, cellWidth: appSize)
-                    }
+                }
             }
         }
     }
@@ -66,18 +74,23 @@ struct AppGridView: View {
             spacing: spacing
         ) {
             ForEach(apps, id: \.identifier) { app in
-                AppCell(app: app, isFocused: apps.firstIndex(of: app) == focusedApp)
+                AppCell(app: app, isFocused: apps.firstIndex(of: app) == appManager.focusedApp)
                     .frame(
                         width: appSize,
                         height: appSize
                     )
             }
         }
+        .focusable()
     }
     
     func calculateColumnCount(width: CGFloat, cellWidth: CGFloat) -> Int {
-        print(width)
-        let small = Int(floor((width - 16 + spacing) / (appSize + spacing - appSizeDiff)))
+        let small = Int(floor((width - 16 + spacing) / (cellWidth + spacing - appSizeDiff)))
+        return small
+    }
+    
+    func calculateRowCount(height: CGFloat, cellHeight: CGFloat) -> Int {
+        let small = Int(floor((height - 16 + spacing) / (cellHeight + spacing - appSizeDiff)))
         return small
     }
     
@@ -85,6 +98,6 @@ struct AppGridView: View {
 
 struct AppGridView_Previews: PreviewProvider {
     static var previews: some View {
-        AppGridView(apps: .constant([]), focusedApp: .constant(1), search: .constant(""))
+        AppGridView(apps: .constant([]), search: .constant(""))
     }
 }

@@ -88,7 +88,7 @@ class PopoverWindowController: NSWindowController, NSWindowDelegate {
     }
 
     func windowDidResignKey(_ notification: Notification) {
-        window?.close()
+//        window?.close()
     }
     
 //    override func keyDown(with event: NSEvent) {

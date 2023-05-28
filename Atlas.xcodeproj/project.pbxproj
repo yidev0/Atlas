@@ -1,0 +1,710 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D118B1CF2A10DFE4005E8AC3 /* DockItemPosition.scpt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1C448752A061F2700148C78 /* DockItemPosition.scpt */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D11CDB042A1326B6005FE2E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11CDB032A1326B6005FE2E4 /* SettingsView.swift */; };
+		D13BCE882A05E1A0003E858C /* AtlasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCE872A05E1A0003E858C /* AtlasApp.swift */; };
+		D13BCE8A2A05E1A0003E858C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCE892A05E1A0003E858C /* ContentView.swift */; };
+		D13BCE8C2A05E1A1003E858C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13BCE8B2A05E1A1003E858C /* Assets.xcassets */; };
+		D13BCE8F2A05E1A1003E858C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13BCE8E2A05E1A1003E858C /* Preview Assets.xcassets */; };
+		D13BCE9F2A05E1A1003E858C /* AtlasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCE9E2A05E1A1003E858C /* AtlasTests.swift */; };
+		D13BCEA92A05E1A1003E858C /* AtlasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCEA82A05E1A1003E858C /* AtlasUITests.swift */; };
+		D13BCEAB2A05E1A1003E858C /* AtlasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCEAA2A05E1A1003E858C /* AtlasUITestsLaunchTests.swift */; };
+		D13BCEB82A05E215003E858C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCEB72A05E215003E858C /* AppDelegate.swift */; };
+		D13BCEBB2A05E258003E858C /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCEBA2A05E258003E858C /* PopoverView.swift */; };
+		D13BCEBE2A0619CA003E858C /* ATAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCEBD2A0619CA003E858C /* ATAppManager.swift */; };
+		D13BCEC12A061ABF003E858C /* ATApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCEC02A061ABF003E858C /* ATApp.swift */; };
+		D146FDCD2A21917300DA38F4 /* FileManager + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146FDCC2A21917300DA38F4 /* FileManager + Extensions.swift */; };
+		D15792EC2A0E3C0900E3EF35 /* ATAppCategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15792EB2A0E3C0900E3EF35 /* ATAppCategoryType.swift */; };
+		D15792EF2A0E4F1D00E3EF35 /* AppCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15792EE2A0E4F1D00E3EF35 /* AppCategoryCell.swift */; };
+		D15792F12A0E553900E3EF35 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15792F02A0E553900E3EF35 /* AppCell.swift */; };
+		D15792F42A0F0E3E00E3EF35 /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15792F32A0F0E3E00E3EF35 /* NSTextField.swift */; };
+		D15792F62A0F10DB00E3EF35 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15792F52A0F10DB00E3EF35 /* SearchField.swift */; };
+		D157E9C82A078E7500ED2B03 /* PopoverWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D157E9C72A078E7500ED2B03 /* PopoverWindowController.swift */; };
+		D1A696582A0C7D9E001D18B6 /* AppGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A696572A0C7D9E001D18B6 /* AppGridView.swift */; };
+		D1F6B1A22A187A1E00E15927 /* ATAppSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6B1A12A187A1E00E15927 /* ATAppSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D13BCE9B2A05E1A1003E858C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D13BCE7C2A05E1A0003E858C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D13BCE832A05E1A0003E858C;
+			remoteInfo = Atlas;
+		};
+		D13BCEA52A05E1A1003E858C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D13BCE7C2A05E1A0003E858C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D13BCE832A05E1A0003E858C;
+			remoteInfo = Atlas;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D118B1CE2A10DFB9005E8AC3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "Users/$USER/Library/Application Scripts/$PRODUCT_BUNDLE_IDENTIFIER";
+			dstSubfolderSpec = 0;
+			files = (
+				D118B1CF2A10DFE4005E8AC3 /* DockItemPosition.scpt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D11CDB032A1326B6005FE2E4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D13BCE842A05E1A0003E858C /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D13BCE872A05E1A0003E858C /* AtlasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasApp.swift; sourceTree = "<group>"; };
+		D13BCE892A05E1A0003E858C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D13BCE8B2A05E1A1003E858C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D13BCE8E2A05E1A1003E858C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D13BCE952A05E1A1003E858C /* Atlas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Atlas.entitlements; sourceTree = "<group>"; };
+		D13BCE9A2A05E1A1003E858C /* AtlasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D13BCE9E2A05E1A1003E858C /* AtlasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasTests.swift; sourceTree = "<group>"; };
+		D13BCEA42A05E1A1003E858C /* AtlasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D13BCEA82A05E1A1003E858C /* AtlasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasUITests.swift; sourceTree = "<group>"; };
+		D13BCEAA2A05E1A1003E858C /* AtlasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D13BCEB72A05E215003E858C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D13BCEBA2A05E258003E858C /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		D13BCEBC2A05EBC2003E858C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D13BCEBD2A0619CA003E858C /* ATAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATAppManager.swift; sourceTree = "<group>"; };
+		D13BCEC02A061ABF003E858C /* ATApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATApp.swift; sourceTree = "<group>"; };
+		D146FDCC2A21917300DA38F4 /* FileManager + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + Extensions.swift"; sourceTree = "<group>"; };
+		D15792EB2A0E3C0900E3EF35 /* ATAppCategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATAppCategoryType.swift; sourceTree = "<group>"; };
+		D15792EE2A0E4F1D00E3EF35 /* AppCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryCell.swift; sourceTree = "<group>"; };
+		D15792F02A0E553900E3EF35 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
+		D15792F32A0F0E3E00E3EF35 /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
+		D15792F52A0F10DB00E3EF35 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		D157E9C72A078E7500ED2B03 /* PopoverWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverWindowController.swift; sourceTree = "<group>"; };
+		D1A696572A0C7D9E001D18B6 /* AppGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGridView.swift; sourceTree = "<group>"; };
+		D1C448752A061F2700148C78 /* DockItemPosition.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DockItemPosition.scpt; sourceTree = "<group>"; };
+		D1F6B1A12A187A1E00E15927 /* ATAppSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATAppSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D13BCE812A05E1A0003E858C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D13BCE972A05E1A1003E858C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D13BCEA12A05E1A1003E858C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D11CDB052A1326B9005FE2E4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D11CDB032A1326B6005FE2E4 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D13BCE7B2A05E1A0003E858C = {
+			isa = PBXGroup;
+			children = (
+				D13BCE862A05E1A0003E858C /* Atlas */,
+				D13BCE9D2A05E1A1003E858C /* AtlasTests */,
+				D13BCEA72A05E1A1003E858C /* AtlasUITests */,
+				D13BCE852A05E1A0003E858C /* Products */,
+				D1C448762A061F2900148C78 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D13BCE852A05E1A0003E858C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D13BCE842A05E1A0003E858C /* Atlas.app */,
+				D13BCE9A2A05E1A1003E858C /* AtlasTests.xctest */,
+				D13BCEA42A05E1A1003E858C /* AtlasUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D13BCE862A05E1A0003E858C /* Atlas */ = {
+			isa = PBXGroup;
+			children = (
+				D1C448752A061F2700148C78 /* DockItemPosition.scpt */,
+				D13BCEBC2A05EBC2003E858C /* Info.plist */,
+				D13BCE872A05E1A0003E858C /* AtlasApp.swift */,
+				D13BCEB72A05E215003E858C /* AppDelegate.swift */,
+				D13BCE892A05E1A0003E858C /* ContentView.swift */,
+				D15792F22A0F0E2D00E3EF35 /* Extensions */,
+				D15792ED2A0E4F0E00E3EF35 /* AppGrid */,
+				D13BCEBF2A061A9E003E858C /* Model */,
+				D13BCEB92A05E249003E858C /* Popover */,
+				D11CDB052A1326B9005FE2E4 /* Settings */,
+				D13BCE8B2A05E1A1003E858C /* Assets.xcassets */,
+				D13BCE952A05E1A1003E858C /* Atlas.entitlements */,
+				D13BCE8D2A05E1A1003E858C /* Preview Content */,
+			);
+			path = Atlas;
+			sourceTree = "<group>";
+		};
+		D13BCE8D2A05E1A1003E858C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D13BCE8E2A05E1A1003E858C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D13BCE9D2A05E1A1003E858C /* AtlasTests */ = {
+			isa = PBXGroup;
+			children = (
+				D13BCE9E2A05E1A1003E858C /* AtlasTests.swift */,
+			);
+			path = AtlasTests;
+			sourceTree = "<group>";
+		};
+		D13BCEA72A05E1A1003E858C /* AtlasUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D13BCEA82A05E1A1003E858C /* AtlasUITests.swift */,
+				D13BCEAA2A05E1A1003E858C /* AtlasUITestsLaunchTests.swift */,
+			);
+			path = AtlasUITests;
+			sourceTree = "<group>";
+		};
+		D13BCEB92A05E249003E858C /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				D13BCEBA2A05E258003E858C /* PopoverView.swift */,
+				D157E9C72A078E7500ED2B03 /* PopoverWindowController.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
+		D13BCEBF2A061A9E003E858C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D13BCEC02A061ABF003E858C /* ATApp.swift */,
+				D13BCEBD2A0619CA003E858C /* ATAppManager.swift */,
+				D15792EB2A0E3C0900E3EF35 /* ATAppCategoryType.swift */,
+				D1F6B1A12A187A1E00E15927 /* ATAppSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D15792ED2A0E4F0E00E3EF35 /* AppGrid */ = {
+			isa = PBXGroup;
+			children = (
+				D1A696572A0C7D9E001D18B6 /* AppGridView.swift */,
+				D15792EE2A0E4F1D00E3EF35 /* AppCategoryCell.swift */,
+				D15792F02A0E553900E3EF35 /* AppCell.swift */,
+				D15792F52A0F10DB00E3EF35 /* SearchField.swift */,
+			);
+			path = AppGrid;
+			sourceTree = "<group>";
+		};
+		D15792F22A0F0E2D00E3EF35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D15792F32A0F0E3E00E3EF35 /* NSTextField.swift */,
+				D146FDCC2A21917300DA38F4 /* FileManager + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D1C448762A061F2900148C78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D13BCE832A05E1A0003E858C /* Atlas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D13BCEAE2A05E1A1003E858C /* Build configuration list for PBXNativeTarget "Atlas" */;
+			buildPhases = (
+				D13BCE802A05E1A0003E858C /* Sources */,
+				D13BCE812A05E1A0003E858C /* Frameworks */,
+				D13BCE822A05E1A0003E858C /* Resources */,
+				D118B1CE2A10DFB9005E8AC3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Atlas;
+			productName = Atlas;
+			productReference = D13BCE842A05E1A0003E858C /* Atlas.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D13BCE992A05E1A1003E858C /* AtlasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D13BCEB12A05E1A1003E858C /* Build configuration list for PBXNativeTarget "AtlasTests" */;
+			buildPhases = (
+				D13BCE962A05E1A1003E858C /* Sources */,
+				D13BCE972A05E1A1003E858C /* Frameworks */,
+				D13BCE982A05E1A1003E858C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D13BCE9C2A05E1A1003E858C /* PBXTargetDependency */,
+			);
+			name = AtlasTests;
+			productName = AtlasTests;
+			productReference = D13BCE9A2A05E1A1003E858C /* AtlasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D13BCEA32A05E1A1003E858C /* AtlasUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D13BCEB42A05E1A1003E858C /* Build configuration list for PBXNativeTarget "AtlasUITests" */;
+			buildPhases = (
+				D13BCEA02A05E1A1003E858C /* Sources */,
+				D13BCEA12A05E1A1003E858C /* Frameworks */,
+				D13BCEA22A05E1A1003E858C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D13BCEA62A05E1A1003E858C /* PBXTargetDependency */,
+			);
+			name = AtlasUITests;
+			productName = AtlasUITests;
+			productReference = D13BCEA42A05E1A1003E858C /* AtlasUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D13BCE7C2A05E1A0003E858C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D13BCE832A05E1A0003E858C = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					D13BCE992A05E1A1003E858C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = D13BCE832A05E1A0003E858C;
+					};
+					D13BCEA32A05E1A1003E858C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = D13BCE832A05E1A0003E858C;
+					};
+				};
+			};
+			buildConfigurationList = D13BCE7F2A05E1A0003E858C /* Build configuration list for PBXProject "Atlas" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D13BCE7B2A05E1A0003E858C;
+			productRefGroup = D13BCE852A05E1A0003E858C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D13BCE832A05E1A0003E858C /* Atlas */,
+				D13BCE992A05E1A1003E858C /* AtlasTests */,
+				D13BCEA32A05E1A1003E858C /* AtlasUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D13BCE822A05E1A0003E858C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D13BCE8F2A05E1A1003E858C /* Preview Assets.xcassets in Resources */,
+				D13BCE8C2A05E1A1003E858C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D13BCE982A05E1A1003E858C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D13BCEA22A05E1A1003E858C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D13BCE802A05E1A0003E858C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1A696582A0C7D9E001D18B6 /* AppGridView.swift in Sources */,
+				D13BCEBE2A0619CA003E858C /* ATAppManager.swift in Sources */,
+				D1F6B1A22A187A1E00E15927 /* ATAppSource.swift in Sources */,
+				D13BCEBB2A05E258003E858C /* PopoverView.swift in Sources */,
+				D13BCE8A2A05E1A0003E858C /* ContentView.swift in Sources */,
+				D15792F12A0E553900E3EF35 /* AppCell.swift in Sources */,
+				D15792F62A0F10DB00E3EF35 /* SearchField.swift in Sources */,
+				D13BCEC12A061ABF003E858C /* ATApp.swift in Sources */,
+				D11CDB042A1326B6005FE2E4 /* SettingsView.swift in Sources */,
+				D157E9C82A078E7500ED2B03 /* PopoverWindowController.swift in Sources */,
+				D15792EF2A0E4F1D00E3EF35 /* AppCategoryCell.swift in Sources */,
+				D13BCE882A05E1A0003E858C /* AtlasApp.swift in Sources */,
+				D15792F42A0F0E3E00E3EF35 /* NSTextField.swift in Sources */,
+				D15792EC2A0E3C0900E3EF35 /* ATAppCategoryType.swift in Sources */,
+				D13BCEB82A05E215003E858C /* AppDelegate.swift in Sources */,
+				D146FDCD2A21917300DA38F4 /* FileManager + Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D13BCE962A05E1A1003E858C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D13BCE9F2A05E1A1003E858C /* AtlasTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D13BCEA02A05E1A1003E858C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D13BCEAB2A05E1A1003E858C /* AtlasUITestsLaunchTests.swift in Sources */,
+				D13BCEA92A05E1A1003E858C /* AtlasUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D13BCE9C2A05E1A1003E858C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D13BCE832A05E1A0003E858C /* Atlas */;
+			targetProxy = D13BCE9B2A05E1A1003E858C /* PBXContainerItemProxy */;
+		};
+		D13BCEA62A05E1A1003E858C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D13BCE832A05E1A0003E858C /* Atlas */;
+			targetProxy = D13BCEA52A05E1A1003E858C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D13BCEAC2A05E1A1003E858C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D13BCEAD2A05E1A1003E858C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D13BCEAF2A05E1A1003E858C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Atlas/Atlas.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Atlas/Preview Content\"";
+				DEVELOPMENT_TEAM = 5U8W3XYWRU;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Atlas/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "To determain where the app icon is in the dock";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yidev.Atlas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D13BCEB02A05E1A1003E858C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Atlas/Atlas.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Atlas/Preview Content\"";
+				DEVELOPMENT_TEAM = 5U8W3XYWRU;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Atlas/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "To determain where the app icon is in the dock";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yidev.Atlas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D13BCEB22A05E1A1003E858C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U8W3XYWRU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yidev.AtlasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Atlas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Atlas";
+			};
+			name = Debug;
+		};
+		D13BCEB32A05E1A1003E858C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U8W3XYWRU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yidev.AtlasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Atlas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Atlas";
+			};
+			name = Release;
+		};
+		D13BCEB52A05E1A1003E858C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U8W3XYWRU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yidev.AtlasUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Atlas;
+			};
+			name = Debug;
+		};
+		D13BCEB62A05E1A1003E858C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U8W3XYWRU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yidev.AtlasUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Atlas;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D13BCE7F2A05E1A0003E858C /* Build configuration list for PBXProject "Atlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D13BCEAC2A05E1A1003E858C /* Debug */,
+				D13BCEAD2A05E1A1003E858C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D13BCEAE2A05E1A1003E858C /* Build configuration list for PBXNativeTarget "Atlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D13BCEAF2A05E1A1003E858C /* Debug */,
+				D13BCEB02A05E1A1003E858C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D13BCEB12A05E1A1003E858C /* Build configuration list for PBXNativeTarget "AtlasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D13BCEB22A05E1A1003E858C /* Debug */,
+				D13BCEB32A05E1A1003E858C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D13BCEB42A05E1A1003E858C /* Build configuration list for PBXNativeTarget "AtlasUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D13BCEB52A05E1A1003E858C /* Debug */,
+				D13BCEB62A05E1A1003E858C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D13BCE7C2A05E1A0003E858C /* Project object */;
+}

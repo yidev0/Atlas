@@ -4,7 +4,7 @@
 Imagine Launchpad, but App Library. (and more compact)
 It shows your apps in the Applications folder on your Mac, not full screen, but as a popup like the downloads folder in the dock.
 
-<img src="Images/screenshot.png" />
+<img src="Images/Screenshot1.png" height=350>
 
 ## Why not Spotlight?
 If you use Spotlight on your Mac, you don't need this. Spotlight is much faster as a way to find apps.

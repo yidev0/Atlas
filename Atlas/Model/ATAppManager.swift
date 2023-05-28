@@ -17,7 +17,11 @@ class ATAppManager: ObservableObject {
     @Published var position: CGPoint = .zero
     @Published var windowSize: CGSize = .init(width: 300, height: 400)
     
+    @Published var search: String = ""
+    @Published var focusedApp = 0
+    
     @Published var columnCount = 0
+    @Published var rowCount = 0
     
     private var scriptURL: URL?
     

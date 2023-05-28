@@ -11,69 +11,28 @@ struct ContentView: View {
     
     @EnvironmentObject var appManager: ATAppManager
     
-    @State var focusedApp: Int = 0
-    @State var search: String = ""
-    @State var keyMonitor: Any?
     @FocusState var isSearching
     
     @State var apps: [ATApp] = []
     
-    init() {
-        
-    }
-    
     var body: some View {
         VStack(spacing: 0) {
-            SearchField(search: $search)
+            SearchField(search: $appManager.search)
                 .shadow(radius: 2)
                 .focused($isSearching)
             
-            AppGridView(apps: $apps, focusedApp: $focusedApp, search: $search)
+            AppGridView(apps: $apps, search: $appManager.search)
         }
         .onAppear {
-            self.apps = appManager.searchApp(with: search)
-            setupKeyEvent()
+            self.apps = appManager.searchApp(with: appManager.search)
         }
-        .onChange(of: search) { newValue in
+        .onChange(of: appManager.search) { newValue in
             self.apps = appManager.searchApp(with: newValue)
         }
-    }
-    
-    func setupKeyEvent() {
-        if keyMonitor != nil { return }
-        keyMonitor = NSEvent.addLocalMonitorForEvents(matching: [.keyDown]) { nsevent in
-            if isSearching {
-                if nsevent.keyCode == 53 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        if search == "" {
-                            NSApplication.shared.keyWindow?.close()
-                        } else {
-                            search = ""
-                        }
-                    }
-                }
-            } else {
-                if nsevent.keyCode == 123 { // right
-                    focusedApp = focusedApp > 1 ? focusedApp - 1 : 0
-                } else if nsevent.keyCode == 124 { // left
-                    focusedApp = focusedApp < apps.count ? focusedApp + 1 : 0
-                } else if nsevent.keyCode == 125 { // down
-                    focusedApp += appManager.columnCount
-                } else if nsevent.keyCode == 126 { // up
-                    focusedApp -= appManager.columnCount
-                }
-                
-                if focusedApp < 0 {
-                    focusedApp = 0
-                } else if focusedApp > apps.count - 1 {
-                    focusedApp = apps.count - 1
-                }
-                
-                if nsevent.keyCode == 36 { // return
-                    apps[focusedApp].openApp()
-                }
+        .onReceive(NotificationCenter.default.publisher(for: .init("OpenApp"))) { output in
+            if let index = output.object as? Int, apps.count > index - 1 {
+                apps[index].openApp()
             }
-            return nsevent
         }
     }
     

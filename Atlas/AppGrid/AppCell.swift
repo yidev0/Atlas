@@ -26,7 +26,7 @@ struct AppCell: View {
             switch isFocused {
             case true :
                 RoundedRectangle(cornerRadius: 50/6.4)
-                    .foregroundColor(.black.opacity(0.3))
+                    .foregroundColor(Color(.separatorColor))//.black.opacity(0.3))
                     .overlay {
                         RoundedRectangle(cornerRadius: 50/6.4)
                             .stroke()

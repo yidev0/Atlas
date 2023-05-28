@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D118B1CF2A10DFE4005E8AC3 /* DockItemPosition.scpt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1C448752A061F2700148C78 /* DockItemPosition.scpt */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D11CDB042A1326B6005FE2E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11CDB032A1326B6005FE2E4 /* SettingsView.swift */; };
 		D13BCE882A05E1A0003E858C /* AtlasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCE872A05E1A0003E858C /* AtlasApp.swift */; };
 		D13BCE8A2A05E1A0003E858C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCE892A05E1A0003E858C /* ContentView.swift */; };
@@ -48,21 +47,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D118B1CE2A10DFB9005E8AC3 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "Users/$USER/Library/Application Scripts/$PRODUCT_BUNDLE_IDENTIFIER";
-			dstSubfolderSpec = 0;
-			files = (
-				D118B1CF2A10DFE4005E8AC3 /* DockItemPosition.scpt in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		D11CDB032A1326B6005FE2E4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D121F8082A234210004F419A /* AtlasRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AtlasRelease.entitlements; sourceTree = "<group>"; };
 		D13BCE842A05E1A0003E858C /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13BCE872A05E1A0003E858C /* AtlasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasApp.swift; sourceTree = "<group>"; };
 		D13BCE892A05E1A0003E858C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,7 +74,6 @@
 		D15792F52A0F10DB00E3EF35 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		D157E9C72A078E7500ED2B03 /* PopoverWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverWindowController.swift; sourceTree = "<group>"; };
 		D1A696572A0C7D9E001D18B6 /* AppGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGridView.swift; sourceTree = "<group>"; };
-		D1C448752A061F2700148C78 /* DockItemPosition.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DockItemPosition.scpt; sourceTree = "<group>"; };
 		D1F6B1A12A187A1E00E15927 /* ATAppSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATAppSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,7 +134,7 @@
 		D13BCE862A05E1A0003E858C /* Atlas */ = {
 			isa = PBXGroup;
 			children = (
-				D1C448752A061F2700148C78 /* DockItemPosition.scpt */,
+				D121F8082A234210004F419A /* AtlasRelease.entitlements */,
 				D13BCEBC2A05EBC2003E858C /* Info.plist */,
 				D13BCE872A05E1A0003E858C /* AtlasApp.swift */,
 				D13BCEB72A05E215003E858C /* AppDelegate.swift */,
@@ -247,7 +233,6 @@
 				D13BCE802A05E1A0003E858C /* Sources */,
 				D13BCE812A05E1A0003E858C /* Frameworks */,
 				D13BCE822A05E1A0003E858C /* Resources */,
-				D118B1CE2A10DFB9005E8AC3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -538,7 +523,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_SKIP_APP_STORE_DEPLOYMENT = NO;
 				CODE_SIGN_ENTITLEMENTS = Atlas/Atlas.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -555,9 +542,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yidev.Atlas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -568,13 +557,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Atlas/Atlas.entitlements;
+				ASSETCATALOG_COMPILER_SKIP_APP_STORE_DEPLOYMENT = NO;
+				CODE_SIGN_ENTITLEMENTS = Atlas/AtlasRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Atlas/Preview Content\"";
 				DEVELOPMENT_TEAM = 5U8W3XYWRU;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Atlas/Info.plist;
@@ -585,9 +576,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yidev.Atlas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

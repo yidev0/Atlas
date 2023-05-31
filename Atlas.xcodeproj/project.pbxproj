@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D11CDB042A1326B6005FE2E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11CDB032A1326B6005FE2E4 /* SettingsView.swift */; };
+		D1313B8F2A275C05001F13F1 /* AppIconGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1313B8E2A275C05001F13F1 /* AppIconGrid.swift */; };
 		D13BCE882A05E1A0003E858C /* AtlasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCE872A05E1A0003E858C /* AtlasApp.swift */; };
 		D13BCE8A2A05E1A0003E858C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13BCE892A05E1A0003E858C /* ContentView.swift */; };
 		D13BCE8C2A05E1A1003E858C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13BCE8B2A05E1A1003E858C /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		D11CDB032A1326B6005FE2E4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D121F8082A234210004F419A /* AtlasRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AtlasRelease.entitlements; sourceTree = "<group>"; };
+		D1313B8E2A275C05001F13F1 /* AppIconGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconGrid.swift; sourceTree = "<group>"; };
 		D13BCE842A05E1A0003E858C /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13BCE872A05E1A0003E858C /* AtlasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasApp.swift; sourceTree = "<group>"; };
 		D13BCE892A05E1A0003E858C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				D1A696572A0C7D9E001D18B6 /* AppGridView.swift */,
 				D15792EE2A0E4F1D00E3EF35 /* AppCategoryCell.swift */,
+				D1313B8E2A275C05001F13F1 /* AppIconGrid.swift */,
 				D15792F02A0E553900E3EF35 /* AppCell.swift */,
 				D15792F52A0F10DB00E3EF35 /* SearchField.swift */,
 			);
@@ -359,6 +362,7 @@
 				D13BCEBB2A05E258003E858C /* PopoverView.swift in Sources */,
 				D13BCE8A2A05E1A0003E858C /* ContentView.swift in Sources */,
 				D15792F12A0E553900E3EF35 /* AppCell.swift in Sources */,
+				D1313B8F2A275C05001F13F1 /* AppIconGrid.swift in Sources */,
 				D15792F62A0F10DB00E3EF35 /* SearchField.swift in Sources */,
 				D13BCEC12A061ABF003E858C /* ATApp.swift in Sources */,
 				D11CDB042A1326B6005FE2E4 /* SettingsView.swift in Sources */,

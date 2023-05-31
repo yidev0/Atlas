@@ -13,11 +13,16 @@ struct AppCategoryCell: View {
     
     var body: some View {
         ZStack {
+            Rectangle()
+                .foregroundColor(.clear)
             Image(systemName: category.symbol)
                 .font(.title)
                 .symbolRenderingMode(.hierarchical)
                 .foregroundStyle(category.color.gradient)
         }
+        .aspectRatio(1, contentMode: .fit)
+        .background(.regularMaterial)
+        .cornerRadius(8)
     }
 }
 

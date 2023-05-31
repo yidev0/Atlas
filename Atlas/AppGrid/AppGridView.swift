@@ -19,7 +19,10 @@ struct AppGridView: View {
     var appSize: CGFloat
     var appSizeDiff: CGFloat
     
-    init(apps: Binding<[ATApp]>, search: Binding<String>) {
+    init(
+        apps: Binding<[ATApp]>,
+        search: Binding<String>
+    ) {
         let spacing: CGFloat = 12
         let appSize: CGFloat = 50
         let diff: CGFloat = 5
@@ -46,42 +49,33 @@ struct AppGridView: View {
         GeometryReader { geometry in
             ScrollViewReader { proxy in
                 ScrollView {
-                    grid
-                        .padding(.all, 8)
-                        .onAppear {
-                            appManager.columnCount = calculateColumnCount(width: geometry.size.width, cellWidth: appSize)
-                            appManager.columnCount = calculateRowCount(height: geometry.size.height, cellHeight: appSize)
-                        }
-                        .onChange(of: geometry.size.width) { newValue in
-                            appManager.columnCount = calculateColumnCount(width: newValue, cellWidth: appSize)
-                        }
-                        .onChange(of: geometry.size.height) { newValue in
-                            appManager.rowCount = calculateRowCount(height: newValue, cellHeight: appSize)
-                        }
+                    AppIconGrid(
+                        apps: apps,
+                        categories: [],
+                        focusedApp: appManager.focusedApp,
+                        columns: columns,
+                        spacing: spacing,
+                        appSize: appSize
+                    )
+                    .padding(.all, 8)
+                }
+                .onAppear {
+                    appManager.columnCount = calculateColumnCount(width: geometry.size.width, cellWidth: appSize)
+                    appManager.columnCount = calculateRowCount(height: geometry.size.height, cellHeight: appSize)
                 }
                 .onChange(of: appManager.focusedApp) { newValue in
                     if apps.count > appManager.focusedApp {
                         proxy.scrollTo(apps[appManager.focusedApp].identifier)
                     }
                 }
+                .onChange(of: geometry.size.width) { newValue in
+                    appManager.columnCount = calculateColumnCount(width: newValue, cellWidth: appSize)
+                }
+                .onChange(of: geometry.size.height) { newValue in
+                    appManager.rowCount = calculateRowCount(height: newValue, cellHeight: appSize)
+                }
             }
         }
-    }
-    
-    var grid: some View {
-        LazyVGrid(
-            columns: columns,
-            spacing: spacing
-        ) {
-            ForEach(apps, id: \.identifier) { app in
-                AppCell(app: app, isFocused: apps.firstIndex(of: app) == appManager.focusedApp)
-                    .frame(
-                        width: appSize,
-                        height: appSize
-                    )
-            }
-        }
-        .focusable()
     }
     
     func calculateColumnCount(width: CGFloat, cellWidth: CGFloat) -> Int {
